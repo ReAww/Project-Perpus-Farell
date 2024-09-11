@@ -1,0 +1,46 @@
+<li><a class="loginbtn" href="index.php?page=login">Login</a></li>
+<li><a href="index.php?page=galeri">Galeri</a></li>
+<li><a href="index.php?page=transaksi">Transaksi</a></li>
+<li><a href="index.php?page=koleksibuku">Koleksi Buku</a></li>
+<li><a href="index.php?page=about">About</a></li>
+<li><a href="index.php?page=contact">Contact</a></li>
+<li><a href="index.php?page=home">Home</a></li>
+
+<?php 
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+            switch($page) {
+                case 'galeri':
+                    include "pages/galeri.php";
+                    break;
+                case 'transaksi';
+                    include "pages/transaksi.php";
+                    break;
+                case 'koleksibuku';
+                    include "pages/koleksibuku.php";
+                    break;
+                case 'about':
+                    include "pages/about.php";
+                    break;
+                case 'contact':
+                    include "pages/contact.php";
+                    break;
+                case 'home':
+                    include "pages/home.php";
+                    break;
+                case 'login';
+                    include "pages/login.php";
+                    break;
+            }
+        }
+        else{
+            include "pages/home.php";
+        }
+        ?>
+
+
+        <h1>Koleksi Buku</h1>
+      <div class="search-input">
+        <input type="text" placeholder="Cari...">
+        <button type="submit"><i class="material-icons">search</i></button>
+      </div>
